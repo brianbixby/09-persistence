@@ -50,7 +50,7 @@ module.exports = function(router) {
     if(req.url.query.id) {
       storage.deleteItem('job', req.url.query.id)
         .then( job => {
-          response.sendJSON(res, 204, job);
+          response.sendText(res, 204, job);
         })
         .catch( err => {
           console.error(err);
